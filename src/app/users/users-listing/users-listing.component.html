@@ -19,6 +19,9 @@
       <div class="t-cell">
         Address
       </div>
+      <div class="t-cell">
+        Actions
+      </div>
   
     </div>
     <div class="t-row" *ngFor="let user of users">
@@ -37,6 +40,11 @@
       </div>
       <div class="t-cell">
         {{ user.address }}
+      </div>
+      <div class="t-cell">
+        <button type="button" class="action-btn">edit</button>
+        /
+        <button type="button" (click)="deleteUser(user.id)" class="action-btn">delete</button>
       </div>
   
     </div>
