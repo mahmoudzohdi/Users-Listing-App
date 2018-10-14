@@ -22,7 +22,12 @@
     display: table-cell;
     font-size: 16px;
     font-weight: 400;
-    padding: 10px 15px;  
+    padding: 10px 15px;
+    .action-btn{
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+    }
   }
   .t-head{
     .t-cell{
