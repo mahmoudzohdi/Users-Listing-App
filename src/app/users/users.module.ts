@@ -3,12 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersListingComponent } from './users-listing/users-listing.component';
+import { UsersService } from './users.service';
 
 @NgModule({
   imports: [
     CommonModule,
     UsersRoutingModule
   ],
-  declarations: [UsersListingComponent]
+  declarations: [UsersListingComponent],
+  providers: [
+    UsersService
+  ]
 })
 export class UsersModule { }
