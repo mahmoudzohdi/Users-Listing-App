@@ -1,6 +1,6 @@
-<div class="container text-center">
+<div class="container">
 
-  <div class="table">
+  <div class="table text-center">
   
     <div class="t-row t-head">
       
@@ -42,12 +42,14 @@
         {{ user.address }}
       </div>
       <div class="t-cell">
-        <button type="button" class="action-btn">edit</button>
+        <button type="button" (click)="openEditForm(user.id)" class="action-btn">edit</button>
         <button type="button" (click)="deleteUser(user.id)" class="action-btn">delete</button>
       </div>
   
     </div>
   
   </div>
+
+  <user-form [user]="userForEdit" *ngIf="openUserForm"></user-form>
 
 </div>

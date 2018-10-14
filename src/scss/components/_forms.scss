@@ -1,0 +1,22 @@
+form{
+  background-color: $softGray;
+  padding: 30px;
+  label{
+    display: block;
+    margin-block-end: 15px;
+  }
+  input{
+    border: 1px solid $borderColor;
+    border-radius: 3px;
+    padding: 10px;
+    display: block;
+    margin-top: 5px;
+  }
+  .submit{
+    background: $black;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 16px;
+  }
+}

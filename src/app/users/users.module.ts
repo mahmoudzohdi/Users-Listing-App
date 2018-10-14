@@ -11,7 +11,10 @@ import { UserFormComponent } from './user-form/user-form.component';
     CommonModule,
     UsersRoutingModule
   ],
-  declarations: [UsersListingComponent, UserFormComponent],
+  declarations: [
+    UsersListingComponent,
+    UserFormComponent
+  ],
   providers: [
     UsersService
   ]

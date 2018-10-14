@@ -11,6 +11,8 @@ export class UsersListingComponent implements OnInit {
 
   private users: User[];
   private flattenUsers: FlattenUsers;
+  private userForEdit: User = null;
+  private openUserForm: boolean = false;
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
@@ -26,6 +28,15 @@ export class UsersListingComponent implements OnInit {
   
   flatUsers(){
     this.flattenUsers = this.usersService.flatUsers(this.users);
+  }
+
+  openEditForm(id?: string){
+    this.openUserForm = true;
+    id && (this.userForEdit = this.flattenUsers[id]);
+  }
+  closeEditForm(){
+    this.openUserForm = false;
+    this.userForEdit = null;
   }
 
   deleteUser(id: string){
