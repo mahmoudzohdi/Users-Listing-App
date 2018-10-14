@@ -13,7 +13,8 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([])
+    RouterModule.forRoot([]),
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
