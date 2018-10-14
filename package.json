@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently --kill-others \"json-server db.json\" \"ng serve\"",
+    "start": "concurrently --kill-others \"json-server --watch db.json\" \"ng serve\"",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
