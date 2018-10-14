@@ -1,16 +1,16 @@
 .table{
   display: table;
   margin: 30px auto;
-  border: 1px solid #eee;
+  border: 1px solid $borderColor;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
   border-radius: 5px;
   .t-row{
     display: table-row;
     &:nth-child(even){
-      background-color: #f5f5f5;
+      background-color: $softGray;
     }
     .t-cell{
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid $borderColor;
     }
     &:last-child{
       .t-cell{
