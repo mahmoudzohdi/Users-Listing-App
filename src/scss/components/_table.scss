@@ -1,9 +1,33 @@
 .table{
   display: table;
+  margin: 30px auto;
+  border: 1px solid #eee;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.1);
+  border-radius: 5px;
   .t-row{
     display: table-row;
+    &:nth-child(even){
+      background-color: #f5f5f5;
+    }
+    .t-cell{
+      border-bottom: 1px solid #eee;
+    }
+    &:last-child{
+      .t-cell{
+        border-bottom: none;
+      }
+    }
   }
   .t-cell{
     display: table-cell;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 15px;  
+  }
+  .t-head{
+    .t-cell{
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 }

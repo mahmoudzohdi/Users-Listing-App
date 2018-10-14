@@ -1,48 +1,52 @@
-<div class="table">
+<div class="text-center">
 
-  <div class="t-row t-head">
-    
-    <div class="t-cell">
-      Username
+  <div class="table">
+  
+    <div class="t-row t-head">
+      
+      <div class="t-cell">
+        Username
+      </div>
+      <div class="t-cell">
+        Full name
+      </div>
+      <div class="t-cell">
+        Email
+      </div>
+      <div class="t-cell">
+        Phone
+      </div>
+      <div class="t-cell">
+        Address
+      </div>
+  
     </div>
-    <div class="t-cell">
-      Full name
+    <div class="t-row" *ngFor="let user of users">
+  
+      <div class="t-cell">
+        {{ user.username }}
+      </div>
+      <div class="t-cell">
+        {{ user.name }}
+      </div>
+      <div class="t-cell">
+        {{ user.email }}
+      </div>
+      <div class="t-cell">
+        {{ user.phone }}
+      </div>
+      <div class="t-cell">
+        <a
+          href="https://maps.google.com/maps?q={{ user.address.geo.lat }},{{ user.address.geo.lng }}&hl=es;z=14"
+          target="_blank">
+          {{ user.address.suite }},
+          {{ user.address.street }},
+          {{ user.address.city }}
+        </a>
+      </div>
+  
     </div>
-    <div class="t-cell">
-      Email
-    </div>
-    <div class="t-cell">
-      Phone
-    </div>
-    <div class="t-cell">
-      Address
-    </div>
-
+  
   </div>
-  <div class="t-row" *ngFor="let user of users">
-
-    <div class="t-cell">
-      {{ user.username }}
-    </div>
-    <div class="t-cell">
-      {{ user.name }}
-    </div>
-    <div class="t-cell">
-      {{ user.email }}
-    </div>
-    <div class="t-cell">
-      {{ user.phone }}
-    </div>
-    <div class="t-cell">
-      <a
-        href="https://maps.google.com/maps?q={{ user.address.geo.lat }},{{ user.address.geo.lng }}&hl=es;z=14"
-        target="_blank">
-        {{ user.address.suite }},
-        {{ user.address.street }},
-        {{ user.address.city }}
-      </a>
-    </div>
-
-  </div>
-
+  
 </div>
