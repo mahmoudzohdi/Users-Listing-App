@@ -1,2 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+// main partials
 @import './partials/_utilities';
+@import './partials/_fonts';
+
+// components
+@import './components/_table';

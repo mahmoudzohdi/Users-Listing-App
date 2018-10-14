@@ -1,0 +1,9 @@
+.table{
+  display: table;
+  .t-row{
+    display: table-row;
+  }
+  .t-cell{
+    display: table-cell;
+  }
+}
