@@ -1,20 +1,37 @@
-<form>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
   <label>
-    username: <input type="text" placeholder="username" required>
+    username: 
+    <input type="text" formControlName="username" placeholder="username">
   </label>
   <label>
-    Full name: <input type="text" placeholder="Full name" required>
+    Full name: <input type="text" formControlName="fullname" placeholder="Full name" required>
   </label>
   <label>
-    Email: <input type="email" placeholder="Email" required>
+    Email: <input type="email" formControlName="email" placeholder="Email" required>
+    <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors">  
+      <div *ngIf="userForm.controls.email.errors.required;then email_required else email_syntax"></div>    
+      <ng-template #email_required>
+        <p>
+          email required
+        </p>
+      </ng-template>
+      <ng-template #email_syntax>
+        <p *ngIf="userForm.controls.email.errors.email">
+          you should write a correct email
+        </p>
+      </ng-template>
+    </div>
+    
+
   </label>
   <label>
-    Phone: <input type="text" placeholder="Phone">
+    Phone: <input type="text" formControlName="phone" placeholder="Phone">
   </label>
   <label>
-    Address: <input type="text" placeholder="Address">
+    Address: <input type="text" formControlName="address" placeholder="Address">
   </label>
 
+  <!-- [disabled]="!userForm.valid" -->
   <button type="submit" class="submit">
     Submit
   </button>

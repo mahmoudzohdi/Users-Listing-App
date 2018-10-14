@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../users.models';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'user-form',
@@ -8,11 +9,27 @@ import { User } from '../users.models';
 })
 export class UserFormComponent implements OnInit {
   @Input() user?: User;
-  constructor() { }
+  private userForm: FormGroup;
+  constructor(
+    private fb: FormBuilder,
+  ) {
+  }
   
   ngOnInit() {
     this.user = this.user || new User();
-    console.log(this.user.address);
+    this.createForm();  
   }
-
+  createForm() {
+    this.userForm = this.fb.group({
+      username: ['', Validators.required],
+      fullname: ['', Validators.required],
+      email: ['', Validators.email],
+      phone: '',
+      address: ''
+    });
+  }
+  onSubmit() {
+    console.log(this.userForm.controls);
+    console.log(this.userForm.value);
+  }
 }
