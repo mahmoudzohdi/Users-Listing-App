@@ -27,6 +27,16 @@
       width: 100%;
       display: block;
       margin-bottom: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      &.delete-btn{
+        background-color: $dangerBtn;
+        color: #fff;
+      }
+      &.edit-btn{
+        background-color: $normalBtn;
+        color: #fff;
+      }
     }
   }
   .t-head{
