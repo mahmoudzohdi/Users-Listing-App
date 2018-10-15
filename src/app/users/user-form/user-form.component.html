@@ -1,22 +1,28 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
   <label>
     username: 
-    <input type="text" formControlName="username" placeholder="username">
+    <input type="text" formControlName="username" placeholder="username" required>
+    <p class="error-message" *ngIf="userForm.controls.username.touched && userForm.controls.username.errors.required">
+      username is required
+    </p>
   </label>
   <label>
     Full name: <input type="text" formControlName="fullname" placeholder="Full name" required>
+    <p class="error-message" *ngIf="userForm.controls.fullname.touched && userForm.controls.fullname.errors.required">
+      fullname is required
+    </p>
   </label>
   <label>
-    Email: <input type="email" formControlName="email" placeholder="Email" required>
-    <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors">  
+    Email: <input id="email" type="email" formControlName="email" placeholder="Email" required>
+    <div *ngIf="userForm.controls.email.touched">  
       <div *ngIf="userForm.controls.email.errors.required;then email_required else email_syntax"></div>    
       <ng-template #email_required>
-        <p>
+        <p class="error-message">
           email required
         </p>
       </ng-template>
       <ng-template #email_syntax>
-        <p *ngIf="userForm.controls.email.errors.email">
+        <p class="error-message" *ngIf="userForm.controls.email.errors.email">
           you should write a correct email
         </p>
       </ng-template>
@@ -31,8 +37,7 @@
     Address: <input type="text" formControlName="address" placeholder="Address">
   </label>
 
-  <!-- [disabled]="!userForm.valid" -->
-  <button type="submit" class="submit">
+  <button type="submit" class="submit" [disabled]="!userForm.valid">
     Submit
   </button>
 
