@@ -1,8 +1,8 @@
-# DokkanzTask
+# Users listing app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
 
-## install
+## Install
 
 - clone repository
 - `cd Users-Listing-App`
