@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## install
 
 - clone repository
-- `cd dokkanz-task`
+- `cd Users-Listing-App`
 - Run `npm install`
 
 ## Development server
