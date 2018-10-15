@@ -5,11 +5,18 @@
       type="button"
       (click)="openEditForm()"
       class="add-user-btn">Add user</button>
+    <button
+      type="button"
+      *ngIf="objectKeys(selectedUsersIDs).length"
+      (click)="deleteSelectedUsers()"
+      class="delete-selected">Delete({{ objectKeys(selectedUsersIDs).length }})</button>
   </div>
   
   <div class="table text-center">
     
     <div class="t-row t-head">
+      
+      <div class="t-cell"></div>
       
       <div class="t-cell">
         Username
@@ -32,6 +39,14 @@
   
     </div>
     <div class="t-row" *ngFor="let user of users">
+  
+      <div class="t-cell">
+        <input
+          type="checkbox"
+          [checked]="!!selectedUsersIDs[user.id]"
+          [value]="user.id"
+          (change)="change($event)">
+      </div>
   
       <div class="t-cell">
         {{ user.username }}
@@ -57,6 +72,6 @@
   
   </div>
 
-  <user-form [user]="userForEdit" (formSubmitted)="listUpdated()" *ngIf="openUserForm"></user-form>
+  <user-form [user]="userForEdit" (formSubmitted)="listUpdated()" (cancelForm)="closeEditForm()" *ngIf="openUserForm"></user-form>
 
 </div>

@@ -11,6 +11,7 @@ import { UsersService } from '../users.service';
 export class UserFormComponent implements OnInit {
   @Input() user?: User;
   @Output() formSubmitted = new EventEmitter();
+  @Output() cancel = new EventEmitter();
   private userForm: FormGroup;
   constructor(
     private fb: FormBuilder,
@@ -30,6 +31,9 @@ export class UserFormComponent implements OnInit {
       phone: this.user.phone,
       address: this.user.address
     });
+  }
+  cancelForm(){
+    this.cancel.next();
   }
   onSubmit() {
     let isNewUser: boolean = !this.user.id; // check if this form for new user

@@ -18,6 +18,10 @@ form{
     display: block;
     margin-top: 5px;
   }
+  .cancel-btn{
+    border-radius: 3px;
+    padding: 8px 16px;
+  }
   .submit{
     background: $black;
     color: #fff;
