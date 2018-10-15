@@ -36,7 +36,7 @@ export class UserFormComponent implements OnInit {
     this.user = Object.assign({}, {
       id: this.user.id || Math.floor(Math.random() * 1000000) // generate id for user if new user
     }, this.userForm.value)
-    console.log(isNewUser);
+
     isNewUser
       ? this.usersService.addUser(this.user).subscribe( res => {
         this.formSubmitted.next();

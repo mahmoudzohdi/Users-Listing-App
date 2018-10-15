@@ -111,6 +111,14 @@
       "email": "Rey.Padberg@karina.biz",
       "phone": "024-648-3804",
       "address": "Suite 198, Kattie Turnpike, Lebsackbury"
+    },
+    {
+      "id": 18476,
+      "username": "new.user",
+      "name": "new user",
+      "email": "new.user@example.com",
+      "phone": "0110000000",
+      "address": "asdsad sad asd "
     }
   ]
 }

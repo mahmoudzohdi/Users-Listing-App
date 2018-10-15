@@ -13,13 +13,18 @@
   </label>
   <label>
     Full name: <input type="text" formControlName="name" placeholder="Full name" required>
-    <p class="error-message" *ngIf="userForm.controls.name.touched && userForm.controls.name.errors.required">
+    <p
+      class="error-message"
+      *ngIf="
+        userForm.controls.name.touched
+        && userForm.controls.name.errors
+        && userForm.controls.name.errors.required">
       name is required
     </p>
   </label>
   <label>
     Email: <input id="email" type="email" formControlName="email" placeholder="Email" required>
-    <div *ngIf="userForm.controls.email.touched">  
+    <div *ngIf="userForm.controls.email.touched && userForm.controls.email.errors">  
       <div *ngIf="userForm.controls.email.errors.required;then email_required else email_syntax"></div>    
       <ng-template #email_required>
         <p class="error-message">
