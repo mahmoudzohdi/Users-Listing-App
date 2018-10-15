@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.1.
 
+## install
+
+- clone repository
+- `cd dokkanz-task`
+- Run `npm install`
+
 ## Development server
 
 Run `npm start` to start angular-cli dev server and [json-server](https://github.com/typicode/json-server) in Concurrently.
