@@ -45,4 +45,9 @@ export class UsersListingComponent implements OnInit {
     });
   }
 
+  listUpdated(){
+    this.closeEditForm();
+    this.getUsersList();
+  }
+
 }

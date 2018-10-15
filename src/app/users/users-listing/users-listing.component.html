@@ -50,6 +50,6 @@
   
   </div>
 
-  <user-form [user]="userForEdit" *ngIf="openUserForm"></user-form>
+  <user-form [user]="userForEdit" (formSubmitted)="listUpdated()" *ngIf="openUserForm"></user-form>
 
 </div>

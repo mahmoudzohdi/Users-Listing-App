@@ -2,14 +2,19 @@
   <label>
     username: 
     <input type="text" formControlName="username" placeholder="username" required>
-    <p class="error-message" *ngIf="userForm.controls.username.touched && userForm.controls.username.errors.required">
+    <p
+      class="error-message"
+      *ngIf="
+        userForm.controls.username.touched
+        && userForm.controls.username.errors
+        && userForm.controls.username.errors.required">
       username is required
     </p>
   </label>
   <label>
-    Full name: <input type="text" formControlName="fullname" placeholder="Full name" required>
-    <p class="error-message" *ngIf="userForm.controls.fullname.touched && userForm.controls.fullname.errors.required">
-      fullname is required
+    Full name: <input type="text" formControlName="name" placeholder="Full name" required>
+    <p class="error-message" *ngIf="userForm.controls.name.touched && userForm.controls.name.errors.required">
+      name is required
     </p>
   </label>
   <label>

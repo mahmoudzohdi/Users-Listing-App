@@ -24,4 +24,11 @@ export class UsersService {
   deleteUser(id: string){
     return this.http.delete(`${this.usersAPI}/${id}`);
   }
+
+  updateUser(user: User){
+    return this.http.put(`${this.usersAPI}/${user.id}`, user).map( res => res.json())
+  }
+  addUser(user: User){
+    return this.http.post(`${this.usersAPI}`, user).map( res => res.json())
+  }
 }
