@@ -62,18 +62,17 @@ export class UsersListingComponent implements OnInit {
     this.deleteUser(ids);
   }
   deleteUser(id: string | string[]){
-    if(Array.isArray(id)){
-      id.map((currentID, index) => {
+    if(Array.isArray(id)){ // if multiple IDs
+      id.map((currentID, index) => { // simulate deleteAllUsers API by call deleteUser multiple times
         setTimeout(()=>{
           this.usersService.deleteUser(currentID).subscribe((res) => {
             console.log(currentID);
-            index == id.length -1 && this.getUsersList();
-            index == id.length -1 && console.log('finish');
+            index == id.length -1 && this.getUsersList(); // get usersList after delete last user (simulation for deleteAllUsers API)
           });
         }, 1000)
       })
     }else{
-      this.usersService.deleteUser(id).subscribe((res) => {
+      this.usersService.deleteUser(id).subscribe((res) => { // if single id
         this.getUsersList();
       });
     }
